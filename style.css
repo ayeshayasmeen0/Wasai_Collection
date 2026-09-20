@@ -2480,3 +2480,744 @@ body {
 .confirm-popup-overlay {
     z-index: 6000 !important;
 }
+/* ================= COMPREHENSIVE MOBILE RESPONSIVE FIX ================= */
+
+/* Tablet & Small Laptop */
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .navbar {
+        padding: 15px;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Mobile Landscape & Small Tablet */
+@media (max-width: 768px) {
+    /* Global */
+    body {
+        font-size: 14px;
+    }
+    
+    .section {
+        padding: 50px 15px;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    /* Navbar */
+    .top-announcement-bar {
+        font-size: 0.72rem;
+        padding: 5px 10px;
+    }
+    
+    .navbar {
+        padding: 12px 15px;
+    }
+    
+    .brand-text {
+        font-size: 1.2rem;
+    }
+    
+    .nav-brand img {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .nav-actions {
+        gap: 6px;
+    }
+    
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+    
+    .badge {
+        font-size: 0.62rem;
+        padding: 2px 5px;
+    }
+    
+    /* Hero */
+    .hero-section {
+        height: 70vh;
+        min-height: 450px;
+        padding: 0 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .hero-btns .btn {
+        width: 100%;
+    }
+    
+    .hero-scroll-indicator {
+        display: none;
+    }
+    
+    /* Section Headers */
+    .section-header {
+        margin-bottom: 35px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.9rem;
+    }
+    
+    .section-header p {
+        font-size: 0.92rem;
+    }
+    
+    .section-tag {
+        font-size: 0.75rem;
+    }
+    
+    /* Categories */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .cat-card {
+        padding: 20px 12px;
+    }
+    
+    .cat-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+    
+    .cat-card h3 {
+        font-size: 0.95rem;
+    }
+    
+    .cat-card p {
+        font-size: 0.78rem;
+    }
+    
+    /* Product Filter */
+    .product-filter-bar {
+        gap: 6px;
+        margin-bottom: 25px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 5px 0 10px;
+        scrollbar-width: none;
+    }
+    
+    .product-filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .filter-chip {
+        padding: 7px 14px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    /* Products */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .product-img-box {
+        height: 160px;
+    }
+    
+    .product-info {
+        padding: 12px 12px 14px;
+    }
+    
+    .product-title {
+        font-size: 0.85rem;
+        min-height: 36px;
+    }
+    
+    .product-price {
+        font-size: 0.95rem;
+    }
+    
+    .product-footer .btn-sm {
+        padding: 5px 10px;
+        font-size: 0.72rem;
+    }
+    
+    .wishlist-toggle-btn {
+        width: 32px;
+        height: 32px;
+        top: 8px;
+        right: 8px;
+        font-size: 0.8rem;
+    }
+    
+    /* About */
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .about-image-wrapper img {
+        height: 300px;
+    }
+    
+    .about-badge-card {
+        right: 10px;
+        bottom: -15px;
+        padding: 12px 16px;
+        font-size: 0.82rem;
+    }
+    
+    .about-float-card {
+        left: 10px;
+        top: 15px;
+        padding: 8px 14px;
+        font-size: 0.78rem;
+    }
+    
+    .about-text-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-text-content p {
+        font-size: 0.92rem;
+    }
+    
+    .quote-p {
+        font-size: 0.92rem;
+    }
+    
+    /* Contact */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .contact-info-box,
+    .contact-form {
+        padding: 25px 20px;
+    }
+    
+    .contact-info-box h3 {
+        font-size: 1.2rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 40px 15px 15px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+    
+    .footer-brand {
+        font-size: 1.4rem;
+    }
+    
+    .footer-col h4 {
+        font-size: 0.95rem;
+    }
+    
+    .footer-col p,
+    .footer-col ul {
+        font-size: 0.85rem;
+    }
+    
+    /* Forms */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Modals */
+    .modal-overlay {
+        padding: 10px;
+    }
+    
+    .auth-modal-container,
+    .search-modal-content,
+    .checkout-modal-content,
+    .admin-login-content,
+    .admin-form-modal-content,
+    .user-profile-content,
+    .success-modal-content,
+    .confirm-popup-content,
+    .product-modal-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 25px 18px;
+        border-radius: 18px;
+        max-height: 92vh;
+    }
+    
+    .auth-modal-container h3 {
+        font-size: 1.4rem;
+    }
+    
+    .product-modal-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-modal-img {
+        min-height: 200px;
+        max-height: 250px;
+        border-radius: 18px 18px 0 0;
+    }
+    
+    .product-modal-img img {
+        border-radius: 18px 18px 0 0;
+    }
+    
+    .product-modal-details {
+        padding: 20px 18px;
+    }
+    
+    .product-modal-details h2 {
+        font-size: 1.2rem;
+    }
+    
+    .product-modal-details .price {
+        font-size: 1.4rem;
+    }
+    
+    /* Drawers */
+    .drawer {
+        width: 100%;
+    }
+    
+    /* Profile Stats */
+    .profile-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .profile-stat {
+        padding: 10px 5px;
+    }
+    
+    .profile-stat span {
+        font-size: 1.15rem;
+    }
+    
+    .profile-stat small {
+        font-size: 0.7rem;
+    }
+    
+    /* Admin Dashboard */
+    .admin-dashboard-overlay {
+        padding: 0;
+    }
+    
+    .admin-dashboard-container {
+        flex-direction: column;
+        height: 100vh;
+        border-radius: 0;
+        max-width: 100%;
+    }
+    
+    .admin-sidebar {
+        width: 100%;
+        padding: 12px 10px;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        scrollbar-width: none;
+        flex-shrink: 0;
+    }
+    
+    .admin-sidebar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .admin-sidebar-brand {
+        font-size: 1rem;
+        margin-bottom: 0;
+        margin-right: 15px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .admin-menu-list {
+        flex-direction: row;
+        gap: 4px;
+        flex-grow: 0;
+    }
+    
+    .admin-menu-link {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .admin-menu-link i {
+        font-size: 0.9rem;
+    }
+    
+    .admin-sidebar-footer {
+        border-top: none;
+        padding-top: 0;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+    
+    .admin-sidebar-footer .btn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+    
+    .admin-topbar {
+        padding: 12px 15px;
+    }
+    
+    .admin-topbar h3 {
+        font-size: 1.1rem;
+    }
+    
+    .admin-topbar-right {
+        font-size: 0.72rem;
+        gap: 10px;
+    }
+    
+    .admin-content-body {
+        padding: 15px 12px;
+    }
+    
+    .admin-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .stat-card {
+        padding: 14px;
+        gap: 10px;
+    }
+    
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+    
+    .stat-info h4 {
+        font-size: 1.1rem;
+    }
+    
+    .stat-info p {
+        font-size: 0.7rem;
+    }
+    
+    .admin-action-bar h3 {
+        font-size: 1rem;
+    }
+    
+    .admin-action-bar .btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+    
+    /* Tables — Horizontal scroll on mobile */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -12px;
+        border-radius: 0;
+    }
+    
+    .admin-table {
+        min-width: 700px;
+        font-size: 0.78rem;
+    }
+    
+    .admin-table th,
+    .admin-table td {
+        padding: 10px 10px;
+        white-space: nowrap;
+    }
+    
+    .admin-table th {
+        font-size: 0.7rem;
+    }
+    
+    .action-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+    
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .chart-card {
+        padding: 15px;
+    }
+    
+    /* Toast */
+    .toast-container {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+    }
+    
+    .toast {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-section {
+        height: 65vh;
+        min-height: 400px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.88rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.7rem;
+    }
+    
+    .section {
+        padding: 40px 12px;
+    }
+    
+    /* Categories — 2 columns still */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .cat-card {
+        padding: 16px 8px;
+    }
+    
+    .cat-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .cat-card h3 {
+        font-size: 0.82rem;
+    }
+    
+    .cat-card p {
+        font-size: 0.7rem;
+    }
+    
+    /* Products */
+    .products-grid {
+        gap: 10px;
+    }
+    
+    .product-img-box {
+        height: 140px;
+    }
+    
+    .product-info {
+        padding: 10px;
+    }
+    
+    .product-title {
+        font-size: 0.78rem;
+        min-height: 32px;
+    }
+    
+    .product-price {
+        font-size: 0.85rem;
+    }
+    
+    .product-cat {
+        font-size: 0.62rem;
+    }
+    
+    .product-footer .btn-sm {
+        padding: 4px 8px;
+        font-size: 0.65rem;
+    }
+    
+    .product-footer .btn-sm i {
+        display: none;
+    }
+    
+    /* Footer — single column */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Profile stats */
+    .profile-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-stat {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+    }
+    
+    .profile-stat span {
+        font-size: 1.2rem;
+    }
+    
+    /* Admin */
+    .admin-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-menu-link span {
+        display: none;
+    }
+    
+    .admin-menu-link {
+        padding: 10px;
+    }
+    
+    .admin-menu-link i {
+        font-size: 1rem;
+    }
+    
+    .admin-sidebar-brand span {
+        font-size: 0.9rem;
+    }
+    
+    .admin-form-modal-content {
+        padding: 20px 15px;
+    }
+    
+    .admin-form-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+    
+    .admin-form-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 9px 18px;
+        font-size: 0.88rem;
+    }
+    
+    .btn-sm {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Very Small Devices */
+@media (max-width: 360px) {
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+    
+    .brand-text {
+        font-size: 1rem;
+    }
+    
+    .nav-brand img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .icon-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .product-img-box {
+        height: 120px;
+    }
+}
+
+/* Fix horizontal scroll (main culprit) */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    * {
+        max-width: 100%;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Prevent content from overflowing */
+    main, section, header, footer, div {
+        max-width: 100%;
+    }
+    
+    /* Fix long words breaking layout */
+    h1, h2, h3, h4, p, span {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
