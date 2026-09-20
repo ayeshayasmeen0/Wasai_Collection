@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasai Collection | Made bead by bead, with love.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= SPLASH SCREEN ================= -->
+    <div id="splash-screen" class="splash-screen">
+        <img src="images/backgrounds/splashs.png" alt="Wasai Splash" class="splash-bg-image" onerror="this.style.display='none'">
+        <div class="splash-bg-gradient"></div>
+        <div class="splash-particles">
+            <span class="particle p1">✦</span>
+            <span class="particle p2">✧</span>
+            <span class="particle p3">✦</span>
+            <span class="particle p4">✧</span>
+            <span class="particle p5">✦</span>
+            <span class="particle p6">✧</span>
+        </div>
+        <div class="splash-content">
+            <div class="splash-icon-box">
+                <i class="fas fa-gem"></i>
+                <div class="splash-icon-ring"></div>
+            </div>
+            <h1 class="splash-title">Wasai Collection</h1>
+            <p class="splash-tagline">"Made bead by bead, with love."</p>
+            <div class="splash-loader-pearls">
+                <span class="pearl"></span>
+                <span class="pearl"></span>
+                <span class="pearl"></span>
+                <span class="pearl"></span>
+                <span class="pearl"></span>
+            </div>
+            <div class="splash-progress">
+                <div class="splash-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="header">
+        <div class="top-announcement-bar">
+            <span>✨ Free shipping on orders over Rs. 2,000 | In loving memory of grandmother Wasai ✨</span>
+        </div>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="#home">
+                    <img src="images/logo.jpeg" alt="Wasai Collection" onerror="this.style.display='none'">
+                    <span class="brand-text">Wasai Collection</span>
+                </a>
+            </div>
+            <ul class="nav-links" id="nav-links-list">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#products-section-anchor" class="nav-link">Products</a></li>
+                <li><a href="#categories-section-anchor" class="nav-link">Categories</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" id="search-trigger-btn" title="Search"><i class="fas fa-search"></i></button>
+                <button class="icon-btn" id="wishlist-drawer-btn" title="Wishlist"><i class="far fa-heart"></i><span class="badge" id="wishlist-count">0</span></button>
+                <button class="icon-btn" id="cart-drawer-btn" title="Cart"><i class="fas fa-shopping-bag"></i><span class="badge" id="cart-count">0</span></button>
+                <button class="icon-btn user-auth-btn" id="user-login-trigger" title="User Account"><i class="far fa-user"></i><span class="user-dot" id="user-dot" style="display:none;"></span></button>
+                <button class="icon-btn admin-secret-btn" id="admin-login-trigger" title="Admin Dashboard"><i class="fas fa-lock"></i></button>
+                <button class="mobile-menu-btn" id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= SEARCH OVERLAY ================= -->
+    <div id="search-modal" class="modal-overlay">
+        <div class="search-modal-content">
+            <button class="close-modal-btn" id="close-search-btn"><i class="fas fa-times"></i></button>
+            <h2>Search Wasai Collection</h2>
+            <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="live-search-input" placeholder="Search pearl bags, bracelets, keychains...">
+            </div>
+            <div id="search-results-container" class="search-results-grid"></div>
+        </div>
+    </div>
+
+    <!-- ================= USER AUTH MODAL ================= -->
+    <div id="user-auth-modal" class="modal-overlay">
+        <div class="auth-modal-container">
+            <button class="close-modal-btn" id="close-auth-modal"><i class="fas fa-times"></i></button>
+            <div class="auth-brand-header">
+                <div class="auth-brand-icon"><i class="fas fa-gem"></i></div>
+                <h3>Wasai Collection</h3>
+                <p>Made bead by bead, with love.</p>
+            </div>
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" data-tab="login-tab">Login</button>
+                <button class="auth-tab-btn" data-tab="signup-tab">Sign Up</button>
+            </div>
+            <div class="auth-form-pane active" id="login-tab">
+                <h3>Welcome Back!</h3>
+                <p>Login to track your handmade orders and wishlist.</p>
+                <form id="user-login-form">
+                    <div class="form-group">
+                        <label>Email or Phone</label>
+                        <input type="text" id="login-email" required placeholder="name@example.com or 03XXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="login-pass" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                </form>
+            </div>
+            <div class="auth-form-pane" id="signup-tab">
+                <h3>Create Account</h3>
+                <p>Join Wasai Collection family for exclusive handmade designs.</p>
+                <form id="user-signup-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="signup-name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email or Phone</label>
+                        <input type="text" id="signup-email" required placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="signup-pass" required placeholder="Create password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= USER PROFILE MODAL ================= -->
+    <div id="user-profile-modal" class="modal-overlay">
+        <div class="user-profile-content">
+            <button class="close-modal-btn" id="close-profile-modal"><i class="fas fa-times"></i></button>
+            <div class="profile-header">
+                <div class="profile-avatar"><i class="fas fa-user"></i></div>
+                <h3 id="profile-name">User Name</h3>
+                <p id="profile-email">user@example.com</p>
+            </div>
+            <div class="profile-stats">
+                <div class="profile-stat"><span id="profile-orders-count">0</span><small>Orders</small></div>
+                <div class="profile-stat"><span id="profile-wishlist-count">0</span><small>Wishlist</small></div>
+                <div class="profile-stat"><span id="profile-cart-count">0</span><small>In Cart</small></div>
+            </div>
+            <div class="profile-orders-list">
+                <h4>My Orders</h4>
+                <div id="profile-orders-container"></div>
+            </div>
+            <button class="btn btn-danger btn-full" id="user-logout-btn" style="margin-top:15px;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main id="main-content-container">
+
+        <!-- HERO SECTION -->
+        <section id="home" class="hero-section" style="background-image: url('images/backgrounds/bg.png');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-subtitle">Handmade With Care & Creativity</span>
+                <h1>Wasai Collection</h1>
+                <p>"Made bead by bead, with love." Keeping the warmth and sweet memories of our beloved grandmother alive in every creation.</p>
+                <div class="hero-btns">
+                    <button class="btn btn-primary" id="hero-shop-now">Shop Now</button>
+                    <button class="btn btn-secondary" id="hero-explore">Explore Collection</button>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+        </section>
+
+        <!-- CATEGORIES SECTION -->
+        <div id="categories-section-anchor"></div>
+        <section class="section categories-preview-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Browse By</span>
+                    <h2>Explore Categories</h2>
+                    <p>Handcrafted accessories designed for your unique style</p>
+                </div>
+                <div class="categories-grid" id="home-categories-grid"></div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <div id="products-section-anchor"></div>
+        <section class="section featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Collection</span>
+                    <h2>Featured Creations</h2>
+                    <p>Our most loved hand-beaded treasures</p>
+                </div>
+                <div class="product-filter-bar" id="product-filter-bar">
+                    <button class="filter-chip active" data-filter="all">All</button>
+                    <button class="filter-chip" data-filter="Beaded Bags">Beaded Bags</button>
+                    <button class="filter-chip" data-filter="Kids Bags">Kids Bags</button>
+                    <button class="filter-chip" data-filter="Bracelets">Bracelets</button>
+                    <button class="filter-chip" data-filter="Keychains">Keychains</button>
+                    <button class="filter-chip" data-filter="Money Pouch">Money Pouch</button>
+                    <button class="filter-chip" data-filter="Mobile Pouch">Mobile Pouch</button>
+                </div>
+                <div class="products-grid" id="featured-products-grid"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section about-section">
+            <div class="container about-container">
+                <div class="about-image-wrapper">
+                    <img src="images/backgrounds/aboutt.png" alt="Wasai Story" onerror="this.src='images/backgrounds/hero.jpg'">
+                    <div class="about-badge-card">
+                        <i class="fas fa-heart"></i>
+                        <span>Pure Handmade Love</span>
+                    </div>
+                    <div class="about-float-card">
+                        <i class="fas fa-gem"></i>
+                        <span>100% Handmade</span>
+                    </div>
+                </div>
+                <div class="about-text-content">
+                    <span class="section-tag">Our Heritage & Story</span>
+                    <h2>The Heart Behind Wasai Collection</h2>
+                    <p>Wasai was the name of our beloved grandmother. We chose the name Wasai Collection as a tribute to her memory, so that a part of her love and warmth stays connected with us through everything we create.</p>
+                    <p class="quote-p">"Made bead by bead, carrying a little piece of love in every creation."</p>
+                    <div class="about-features-list">
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> 100% Handcrafted Artisan Work</div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Premium Quality Pearls & Beads</div>
+                        <div class="feature-item"><i class="fas fa-check-circle"></i> Custom Orders Welcomed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get In Touch</span>
+                    <h2>Contact Us</h2>
+                    <p>We would love to hear from you or customize a piece for your special moments</p>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info-box">
+                        <h3>Connect With Us</h3>
+                        <p>Reach out for custom beaded orders or inquiries.</p>
+                        <ul class="contact-details-list">
+                            <li><i class="fas fa-phone-alt"></i> <span>0316 7428920</span></li>
+                            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/923167428920" target="_blank">Chat on WhatsApp (923167428920)</a></li>
+                            <li><i class="fab fa-instagram"></i> <a href="https://instagram.com/wasai_collection" target="_blank">@wasai_collection</a></li>
+                        </ul>
+                    </div>
+                    <form class="contact-form" id="frontend-contact-form">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" id="contact-name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" id="contact-phone" required placeholder="03XXXXXXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label>Message / Custom Request</label>
+                            <textarea id="contact-msg" rows="4" required placeholder="Tell us what you would like custom-made..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <div class="footer-brand">Wasai Collection</div>
+                <p>"Made bead by bead, with love." Crafted in loving memory of our grandmother Wasai.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/wasai_collection" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/wasai_collection" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://youtube.com/@wasai_collection" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/923167428920" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Our Story</a></li>
+                    <li><a href="#products-section-anchor">All Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#" class="footer-cat-link" data-cat="Beaded Bags">Beaded Bags</a></li>
+                    <li><a href="#" class="footer-cat-link" data-cat="Kids Bags">Kids Bags</a></li>
+                    <li><a href="#" class="footer-cat-link" data-cat="Bracelets">Bracelets</a></li>
+                    <li><a href="#" class="footer-cat-link" data-cat="Keychains">Keychains</a></li>
+                    <li><a href="#" class="footer-cat-link" data-cat="Money Pouch">Money Pouch</a></li>
+                    <li><a href="#" class="footer-cat-link" data-cat="Mobile Pouch">Mobile Pouch</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> 0316 7428920</p>
+                <p><i class="fab fa-whatsapp"></i> +92 316 7428920</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wasai Collection. All rights reserved. Made bead by bead with love.</p>
+        </div>
+    </footer>
+
+    <!-- ================= CART DRAWER ================= -->
+    <div id="cart-drawer" class="drawer">
+        <div class="drawer-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Shopping Cart</h3>
+            <button class="close-drawer-btn" id="close-cart-drawer"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="drawer-body" id="cart-drawer-items"></div>
+        <div class="drawer-footer" id="cart-drawer-footer">
+            <div class="cart-subtotal-row">
+                <span>Subtotal:</span>
+                <span id="cart-drawer-subtotal">Rs. 0</span>
+            </div>
+            <button class="btn btn-primary btn-full" id="proceed-to-checkout-btn">Proceed To Checkout</button>
+        </div>
+    </div>
+
+    <!-- ================= WISHLIST DRAWER ================= -->
+    <div id="wishlist-drawer" class="drawer">
+        <div class="drawer-header">
+            <h3><i class="far fa-heart"></i> Your Wishlist</h3>
+            <button class="close-drawer-btn" id="close-wishlist-drawer"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="drawer-body" id="wishlist-drawer-items"></div>
+    </div>
+
+    <!-- ================= PRODUCT DETAIL MODAL ================= -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="product-modal-container" id="product-modal-content-box"></div>
+    </div>
+
+    <!-- ================= CHECKOUT MODAL ================= -->
+    <div id="checkout-modal" class="modal-overlay">
+        <div class="checkout-modal-content">
+            <button class="close-modal-btn" id="close-checkout-btn"><i class="fas fa-times"></i></button>
+            <h2>Complete Your Order</h2>
+            <form id="checkout-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Customer Full Name *</label>
+                        <input type="text" id="chk-name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="text" id="chk-phone" required placeholder="03XXXXXXXXX">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>WhatsApp Number *</label>
+                        <input type="text" id="chk-whatsapp" required placeholder="923167428920">
+                    </div>
+                    <div class="form-group">
+                        <label>City *</label>
+                        <input type="text" id="chk-city" required placeholder="e.g. Lahore, Karachi">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Complete Address *</label>
+                    <textarea id="chk-address" rows="2" required placeholder="House #, Street, Area, City"></textarea>
+                </div>
+                <div class="checkout-summary-box">
+                    <div class="sum-row"><span>Items Total:</span> <span id="chk-items-total">Rs. 0</span></div>
+                    <div class="sum-row"><span>Shipping:</span> <span>Rs. 200</span></div>
+                    <div class="sum-row total-row"><span>Final Total:</span> <span id="chk-final-total">Rs. 0</span></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-check-circle"></i> Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= ORDER SUCCESS MODAL ================= -->
+    <div id="order-success-modal" class="modal-overlay">
+        <div class="success-modal-content">
+            <div class="success-icon"><i class="fas fa-check"></i></div>
+            <h2>Order Placed Successfully!</h2>
+            <p>Thank you for choosing Wasai Collection.</p>
+            <div class="order-id-box">
+                <span>Order ID:</span> <strong id="success-order-id">WSC-2026-00001</strong>
+            </div>
+            <div class="success-actions">
+                <a href="#" id="whatsapp-order-btn" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Send on WhatsApp</a>
+                <button class="btn btn-secondary" id="close-success-modal-btn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= ADMIN LOGIN MODAL ================= -->
+    <div id="admin-login-modal" class="modal-overlay">
+        <div class="admin-login-content">
+            <button class="close-modal-btn" id="close-admin-login"><i class="fas fa-times"></i></button>
+            <div class="admin-login-icon"><i class="fas fa-lock"></i></div>
+            <h2>Admin Portal</h2>
+            <p>Enter passcode to access dashboard.</p>
+            <div class="form-group">
+                <input type="password" id="admin-passcode-input" placeholder="Passcode (e.g. ------)">
+            </div>
+            <button class="btn btn-primary btn-full" id="admin-login-submit">Login to Dashboard</button>
+        </div>
+    </div>
+
+    <!-- ================= ADMIN DASHBOARD ================= -->
+    <div id="admin-dashboard-modal" class="admin-dashboard-overlay">
+        <div class="admin-dashboard-container">
+            <div class="admin-sidebar">
+                <div class="admin-sidebar-brand">
+                    <i class="fas fa-gem"></i> <span>Wasai Admin</span>
+                </div>
+                <ul class="admin-menu-list">
+                    <li><a href="#" class="admin-menu-link active" data-target="admin-tab-overview"><i class="fas fa-chart-line"></i> Overview</a></li>
+                    <li><a href="#" class="admin-menu-link" data-target="admin-tab-products"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="#" class="admin-menu-link" data-target="admin-tab-orders"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                    <li><a href="#" class="admin-menu-link" data-target="admin-tab-users"><i class="fas fa-users"></i> Users</a></li>
+                    <li><a href="#" class="admin-menu-link" data-target="admin-tab-activity"><i class="fas fa-history"></i> Activity</a></li>
+                    <li><a href="#" class="admin-menu-link" data-target="admin-tab-analytics"><i class="fas fa-chart-pie"></i> Analytics</a></li>
+                </ul>
+                <div class="admin-sidebar-footer">
+                    <button class="btn btn-danger btn-sm btn-full" id="admin-logout-btn"><i class="fas fa-sign-out-alt"></i> Exit Admin</button>
+                </div>
+            </div>
+            <div class="admin-main-content">
+                <div class="admin-topbar">
+                    <h3 id="admin-current-title">Dashboard Overview</h3>
+                    <div class="admin-topbar-right">
+                        <span id="admin-current-time"></span>
+                        <button class="close-admin-btn" id="close-admin-dashboard"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="admin-content-body">
+                    
+                    <!-- TAB 1: OVERVIEW -->
+                    <div class="admin-tab-pane active" id="admin-tab-overview">
+                        <div class="admin-stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon pink"><i class="fas fa-box"></i></div>
+                                <div class="stat-info"><h4 id="stat-total-products">0</h4><p>Total Products</p></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon purple"><i class="fas fa-shopping-bag"></i></div>
+                                <div class="stat-info"><h4 id="stat-total-orders">0</h4><p>Total Orders</p></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon green"><i class="fas fa-rupee-sign"></i></div>
+                                <div class="stat-info"><h4 id="stat-total-revenue">Rs. 0</h4><p>Total Revenue</p></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon blue"><i class="fas fa-users"></i></div>
+                                <div class="stat-info"><h4 id="stat-total-customers">0</h4><p>Customers</p></div>
+                            </div>
+                        </div>
+                        <div class="admin-recent-section">
+                            <h3>Recent Orders</h3>
+                            <div class="table-responsive">
+                                <table class="admin-table">
+                                    <thead><tr><th>Order ID</th><th>Customer</th><th>Total</th><th>Status</th><th>Date</th></tr></thead>
+                                    <tbody id="admin-recent-orders-tbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: PRODUCTS -->
+                    <div class="admin-tab-pane" id="admin-tab-products">
+                        <div class="admin-action-bar">
+                            <h3>Product Management</h3>
+                            <button class="btn btn-primary" id="open-add-product-modal"><i class="fas fa-plus"></i> Add New Product</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead><tr><th>Image</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead>
+                                <tbody id="admin-products-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: ORDERS -->
+                    <div class="admin-tab-pane" id="admin-tab-orders">
+                        <h3>Customer Orders List</h3>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead><tr><th>Order ID</th><th>Customer</th><th>Address</th><th>Products</th><th>Total</th><th>Status</th><th>Action</th></tr></thead>
+                                <tbody id="admin-orders-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4: USERS -->
+                    <div class="admin-tab-pane" id="admin-tab-users">
+                        <h3>Registered Users</h3>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead><tr><th>Name</th><th>Email/Phone</th><th>Cart Items</th><th>Wishlist</th><th>Orders</th><th>Joined</th></tr></thead>
+                                <tbody id="admin-users-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- TAB 5: ACTIVITY LOG -->
+                    <div class="admin-tab-pane" id="admin-tab-activity">
+                        <div class="admin-action-bar">
+                            <h3>User Activity Log</h3>
+                            <button class="btn btn-secondary btn-sm" id="clear-activity-log"><i class="fas fa-trash"></i> Clear Log</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead><tr><th>Time</th><th>User</th><th>Action</th><th>Details</th></tr></thead>
+                                <tbody id="admin-activity-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- TAB 6: ANALYTICS -->
+                    <div class="admin-tab-pane" id="admin-tab-analytics">
+                        <h3>Visual Analytics & Charts</h3>
+                        <div class="charts-grid">
+                            <div class="chart-card">
+                                <h4>Sales Revenue Trend</h4>
+                                <canvas id="salesChart"></canvas>
+                            </div>
+                            <div class="chart-card">
+                                <h4>Category Distribution</h4>
+                                <canvas id="categoryChart"></canvas>
+                            </div>
+                            <div class="chart-card">
+                                <h4>Order Status Breakdown</h4>
+                                <canvas id="statusChart"></canvas>
+                            </div>
+                            <div class="chart-card">
+                                <h4>Top Selling Products</h4>
+                                <canvas id="topProductsChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= ADMIN PRODUCT FORM MODAL ================= -->
+    <div id="admin-product-form-modal" class="modal-overlay admin-product-modal-overlay">
+        <div class="admin-form-modal-content">
+            <button class="close-modal-btn" id="close-admin-form-modal"><i class="fas fa-times"></i></button>
+            <div class="admin-form-header">
+                <div class="admin-form-icon"><i class="fas fa-gem"></i></div>
+                <h3 id="admin-form-modal-title">Add New Product</h3>
+                <p>Fill in the details to create your handmade treasure</p>
+            </div>
+            <form id="admin-product-save-form">
+                <input type="hidden" id="edit-product-id">
+                <div class="form-group">
+                    <label><i class="fas fa-tag"></i> Product Name *</label>
+                    <input type="text" id="prod-name" required placeholder="e.g. Pink Pearl Heart Bag">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-list"></i> Category *</label>
+                        <select id="prod-category" required>
+                            <option value="Beaded Bags">Beaded Bags</option>
+                            <option value="Kids Bags">Kids Bags</option>
+                            <option value="Bracelets">Bracelets</option>
+                            <option value="Keychains">Keychains</option>
+                            <option value="Money Pouch">Money Pouch</option>
+                            <option value="Mobile Pouch">Mobile Pouch</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-rupee-sign"></i> Price (Rs.) *</label>
+                        <input type="number" id="prod-price" required placeholder="1200">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-cubes"></i> Stock Quantity *</label>
+                        <input type="number" id="prod-stock" required value="10">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-image"></i> Product Image *</label>
+                        <input type="file" id="prod-image-file" accept="image/*">
+                        <input type="text" id="prod-image-url" placeholder="Or enter image URL/path" style="margin-top: 5px;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-align-left"></i> Description</label>
+                    <textarea id="prod-desc" rows="3" placeholder="Handcrafted with delicate pearls..."></textarea>
+                </div>
+                <div class="image-preview-box" id="image-preview-box" style="display:none;">
+                    <label style="font-size:0.85rem; color:var(--gray-text); margin-bottom:8px; display:block;">
+                        <i class="fas fa-eye"></i> Preview:
+                    </label>
+                    <img id="image-preview" src="" alt="Preview">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-save"></i> Save Product</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= CONFIRMATION POPUP MODAL ================= -->
+    <div id="confirm-popup-modal" class="modal-overlay confirm-popup-overlay">
+        <div class="confirm-popup-content">
+            <div class="confirm-popup-icon">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <h3 id="confirm-popup-title">Are you sure?</h3>
+            <p id="confirm-popup-message">This action cannot be undone.</p>
+            <div class="confirm-popup-actions">
+                <button class="btn btn-secondary" id="confirm-popup-no"><i class="fas fa-times"></i> No, Cancel</button>
+                <button class="btn btn-primary" id="confirm-popup-yes"><i class="fas fa-check"></i> Yes, Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= TOAST NOTIFICATION ================= -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
